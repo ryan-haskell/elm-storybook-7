@@ -9,10 +9,17 @@ export default {
     "@storybook/addon-interactions"
   ],
   "framework": {
-    "name": "@storybook/html-webpack5",
+    "name": "@storybook/html-vite",
     "options": {}
   },
-  "docs": {
-    "autodocs": "tag"
+  async viteFinal(config) {
+    return {
+      ...config,
+      define: {
+        ...config.define,
+        // Prevents "global is not defined" error
+        global: "window",
+      },
+    };
   }
 };
