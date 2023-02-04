@@ -40,48 +40,11 @@ export const Primary = {
     primary: true,
     label: 'Create post',
   },
-  parameters: {
-    layout: 'centered',
-    docs: {
-      source: {
-        language: 'elm',
-        code: `
-import Components.Button
-
-view : Html Msg
-view =
-    Components.Button.new 
-        { label = "Create post" 
-        }
-        |> Components.Button.view
-`
-      }
-    }
-  },
 };
 
 export const Secondary = {
   args: {
     label: 'Cancel',
-  },
-  parameters: {
-    layout: 'centered',
-    docs: {
-      source: {
-        language: 'elm',
-        code: `
-import Components.Button
-
-view : Html Msg
-view =
-    Components.Button.new 
-        { label = "Cancel" 
-        }
-        |> Components.Button.withStyleSecondary
-        |> Components.Button.view
-`
-      }
-    }
   },
 };
 
@@ -90,51 +53,11 @@ export const Large = {
     size: 'large',
     label: 'Button',
   },
-  parameters: {
-    layout: 'centered',
-    docs: {
-      source: {
-        language: 'elm',
-        code: `
-import Components.Button
-
-view : Html Msg
-view =
-    Components.Button.new 
-        { label = "Button" 
-        }
-        |> Components.Button.withStyleSecondary
-        |> Components.Button.withSizeLarge
-        |> Components.Button.view
-`
-      }
-    }
-  },
 };
 
 export const Small = {
   args: {
     size: 'small',
     label: 'Button',
-  },
-  parameters: {
-    layout: 'centered',
-    docs: {
-      source: {
-        language: 'elm',
-        code: `
-import Components.Button
-
-view : Html Msg
-view =
-    Components.Button.new 
-        { label = "Button" 
-        }
-        |> Components.Button.withStyleSecondary
-        |> Components.Button.withSizeSmall
-        |> Components.Button.view
-`
-      }
-    }
   },
 };
