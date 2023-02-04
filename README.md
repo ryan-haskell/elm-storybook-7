@@ -1,5 +1,5 @@
 # Elm Storybook 7.0
-> Exploring an Elm framework for the latest Storybook version
+> Exploring an Elm integration with the latest Storybook version
 
 ![A demo of the starter project](./screenshot.png)
 
