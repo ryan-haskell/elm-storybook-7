@@ -1,3 +1,5 @@
+import ElmVitePlugin from 'vite-plugin-elm'
+
 export default {
   "stories": [
     "../src/**/*.mdx",
@@ -15,6 +17,10 @@ export default {
   async viteFinal(config) {
     return {
       ...config,
+      plugins: [
+        ...config.plugins,
+        ElmVitePlugin({ debug: false, optimize: false })
+      ],
       define: {
         ...config.define,
         // Prevents "global is not defined" error
