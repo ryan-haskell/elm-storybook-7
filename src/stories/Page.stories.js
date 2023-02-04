@@ -16,6 +16,9 @@ export default {
     })
     return node
   },
+  argTypes: {
+    onLog: { name: 'Elm' }
+  },
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/7.0/html/configure/story-layout
     layout: 'fullscreen',
