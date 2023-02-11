@@ -4,30 +4,14 @@ import './page.css'
 import { within, userEvent } from '@storybook/testing-library';
 import { expect } from '@storybook/jest'
 import { Elm } from './Page.elm'
-import code from './Page.elm?raw'
+import { render } from '../../.storybook/render'
 
 export default {
   title: 'Example/Page',
-  render: (args) => {
-    let node = document.createElement('div')
-    window.requestAnimationFrame(() => {
-      let app = Elm.Stories.Page.init({ node, flags: args })
-      app.ports.log.subscribe(args.onLog)
-    })
-    return node
-  },
-  argTypes: {
-    onLog: { name: 'Elm' }
-  },
+  render: render(Elm.Stories.Page),
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/7.0/html/configure/story-layout
-    layout: 'fullscreen',
-    docs: {
-      source: {
-        language: 'elm',
-        code
-      }
-    }
+    layout: 'fullscreen'
   },
 };
 

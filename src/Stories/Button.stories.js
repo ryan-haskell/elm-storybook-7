@@ -1,31 +1,16 @@
 import './button.css'
 import { Elm } from './Button.elm'
-import code from './Button.elm?raw'
+import { render } from '../../.storybook/render'
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/html/writing-stories/introduction
 export default {
   title: 'Example/Button',
-  tags: ['autodocs'],
-  render: (args) => {
-    let node = document.createElement('div')
-    window.requestAnimationFrame(() => {
-      let app = Elm.Stories.Button.init({ node, flags: args })
-      app.ports.log.subscribe(args.onLog)
-    })
-    return node
-  },
+  render: render(Elm.Stories.Button),
   parameters: {
-    layout: 'centered',
-    docs: {
-      source: {
-        language: 'elm',
-        code
-      }
-    }
+    layout: 'centered'
   },
   argTypes: {
     label: { control: 'text' },
-    onLog: { action: 'Elm', control: false },
     primary: { control: 'boolean' },
     size: {
       control: { type: 'select' },
