@@ -6,6 +6,5 @@
 ## Run this example locally
 
 ```
-npm install
-npm run storybook
+npm start
 ```
